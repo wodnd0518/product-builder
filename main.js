@@ -122,3 +122,25 @@ function showFinalScore() {
 nextBtn.addEventListener("click", handleNextButton);
 
 startQuiz();
+
+// Theme Toggle
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+const docElement = document.documentElement;
+
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = docElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        docElement.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+    } else {
+        docElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+// Apply saved theme on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    docElement.setAttribute('data-theme', savedTheme);
+}
+

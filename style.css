@@ -10,6 +10,15 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+[data-theme='dark'] {
+    --bg-gradient-start: #232526;
+    --bg-gradient-end: #414345;
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-color: #f1f1f1;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -19,6 +28,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    transition: background 0.5s ease;
 }
 
 .main-container {
@@ -38,11 +48,33 @@ body {
     box-shadow: 0 8px 32px 0 var(--shadow-color);
     color: var(--text-color);
     text-align: center;
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
 
 .quiz-title {
     font-size: 2.5em;
     margin-bottom: 10px;
+}
+
+#theme-toggle-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+#theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme='dark'] #theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .instructions {
@@ -67,11 +99,16 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px var(--shadow-color);
+    color: var(--text-color);
 }
 
 .option-btn:hover {
     background: rgba(255, 255, 255, 0.4);
     transform: translateY(-3px);
+}
+
+[data-theme='dark'] .option-btn:hover {
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .option-btn.correct {
@@ -111,6 +148,7 @@ body {
     padding: 30px;
     box-shadow: 0 8px 32px 0 var(--shadow-color);
     color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
 
 .history-title {
@@ -133,6 +171,10 @@ body {
     padding: 15px;
     margin-bottom: 10px;
     font-size: 1em;
+}
+
+[data-theme='dark'] .history-item {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .history-item.correct {
@@ -161,7 +203,15 @@ body {
     border-radius: 10px;
 }
 
+[data-theme='dark'] .history-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .history-list::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
+}
+
+[data-theme='dark'] .history-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
 }
