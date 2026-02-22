@@ -1,17 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lotto Number Generator</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd One Out - Synonym Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Lotto Number Generator</h1>
-    <div id="numbers-display" class="numbers-display"></div>
-    <button id="generate-btn">Generate Numbers</button>
-  </main>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div class="main-container">
+        <div class="quiz-container">
+            <h1 class="quiz-title">Odd One Out</h1>
+            <p class="instructions">From the five words below, find the one that doesn't belong.</p>
+            <div id="question-container" class="question-container">
+                <p id="question-text" class="question-text"></p>
+                <div id="options-container" class="options-container"></div>
+            </div>
+            <button id="next-btn" class="next-btn" style="display: none;">Next Question</button>
+        </div>
+        <div class="history-container">
+            <h2 class="history-title">History</h2>
+            <ul id="history-list" class="history-list"></ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
