@@ -8,6 +8,7 @@
     --correct-color: #28a745;
     --incorrect-color: #dc3545;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --link-color: #5856d6;
 }
 
 [data-theme='dark'] {
@@ -17,6 +18,7 @@
     --border-color: rgba(255, 255, 255, 0.1);
     --text-color: #f1f1f1;
     --shadow-color: rgba(0, 0, 0, 0.5);
+    --link-color: #ff9500;
 }
 
 body {
@@ -29,29 +31,34 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
     transition: background 0.5s ease;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1024px;
 }
 
-.nav-container {
+header.nav-container {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    padding: 20px;
+    padding: 20px 30px;
     box-shadow: 0 8px 32px 0 var(--shadow-color);
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
-.nav-container a {
+header.nav-container a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.1em;
@@ -59,14 +66,14 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-container a:hover {
+header.nav-container a:hover {
     text-decoration: underline;
 }
 
 
 .quiz-and-history-container {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
 }
 
@@ -84,7 +91,7 @@ body {
 }
 
 .quiz-title {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 10px;
 }
 
@@ -225,6 +232,121 @@ body {
     font-weight: bold;
 }
 
+.ad-container {
+    width: 100%;
+    min-height: 90px;
+    background: var(--glass-bg);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* New Styles for Content-Rich Site */
+.static-page-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 30px 40px;
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    color: var(--text-color);
+    transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.static-page-container h1,
+.static-page-container h2,
+.static-page-container h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.static-page-container p {
+    margin-bottom: 1em;
+}
+
+.static-page-container a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.static-page-container a:hover {
+    text-decoration: underline;
+}
+
+.static-page-container ul, .static-page-container ol {
+    padding-left: 20px;
+}
+
+.footer-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-container a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+ul.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.article-list li {
+    margin-bottom: 20px;
+}
+
+ul.article-list a {
+    display: block;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] ul.article-list a {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+ul.article-list a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+ul.article-list h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+    color: var(--text-color);
+}
+
+ul.article-list p {
+    margin: 0;
+    font-size: 1em;
+}
+
 /* Custom Scrollbar for History */
 .history-list::-webkit-scrollbar {
     width: 8px;
@@ -246,18 +368,4 @@ body {
 
 [data-theme='dark'] .history-list::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.5);
-}
-
-.ad-container {
-    width: 100%;
-    min-height: 90px;
-    background: var(--glass-bg);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--text-color);
-    box-sizing: border-box;
-    padding: 10px;
 }
