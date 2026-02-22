@@ -33,9 +33,41 @@ body {
 
 .main-container {
     display: flex;
+    flex-direction: column;
     gap: 20px;
     width: 100%;
     max-width: 1200px;
+}
+
+.nav-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.nav-container a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-container a:hover {
+    text-decoration: underline;
+}
+
+
+.quiz-and-history-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
 }
 
 .quiz-container {
